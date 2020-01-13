@@ -1,0 +1,31 @@
+name: gatsby-to-ft
+description: Deploy a gatsby site to ftp
+inputs:
+  user:
+    required: true
+    description: Ftp user
+  password:
+    required: true
+    description: Ftp password
+  port:
+    description: FTP port
+    required: false
+    default: "21"
+  host:
+    description: FTP host url
+    required: true
+  path:
+    description: Path to Gatsby's build folder (usually ./public)
+    default: public
+    required: true
+  into:
+    description: Where to place the files in your ftp
+    required: true
+  cleanupExisting:
+    required: false
+    default: false
+    description: Remove existing file inside FTP destination folder
+
+runs:
+  using: "node12"
+  main: dist/index.js

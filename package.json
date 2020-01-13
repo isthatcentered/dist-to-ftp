@@ -1,0 +1,46 @@
+{
+  "name": "gatsby-to-ftp",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@actions/core": "^1.2.1",
+    "@actions/github": "^2.0.1",
+    "@zeit/ncc": "^0.21.0",
+    "husky": "^4.0.7",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
+    "typescript": "^3.7.4"
+  },
+  "scripts": {
+    "cleanup": "rm -rf dist",
+    "prebuild": "yarn cleanup",
+    "build": "yarn ncc build src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "prettier": {
+    "semi": false,
+    "bracketSpacing": true,
+    "trailingComma": "all",
+    "cursorOffset": -1,
+    "jsxSingleQuote": false,
+    "tabWidth": 2
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isthatcentered/gatsby-to-ftp.git"
+  },
+  "keywords": [],
+  "author": "Edouard Penin <e.peninb@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isthatcentered/gatsby-to-ftp/issues"
+  },
+  "homepage": "https://github.com/isthatcentered/gatsby-to-ftp#readme",
+  "description": ""
+}
