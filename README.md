@@ -11,7 +11,7 @@ _(Or whatever your build folder is called)_
 ### TLDR;
 
 ```yaml
-name: Test action
+name: Deploy app
 on: [push]
 jobs:
   deploy:
@@ -33,7 +33,7 @@ jobs:
 ### Full on
 
 ```yaml
-name: Hello world
+name: Deploy app
 on:
   push:
     branches:
