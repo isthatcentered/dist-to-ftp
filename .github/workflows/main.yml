@@ -1,0 +1,16 @@
+name: Test action
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Try action
+      uses: ./
+      with:
+        hello: world 
+      
