@@ -17,9 +17,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@master
       - name: Deploy app
-        uses: isthatcentered/dist-to-ftp@v1
+        uses: isthatcentered/dist-to-ftp@master
         with:
           user: ${{ secrets.FTP_USER }} # Ftp user Ex:
           password: ${{ secrets.FTP_PASSWORD }} # Ftp password Ex:
