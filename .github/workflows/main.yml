@@ -3,14 +3,18 @@ name: Test action
 on: [push]
 
 jobs:
-  build:
-
+  test:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v1
     - name: Try action
       uses: ./
       with:
-        hello: world 
-      
+        user: ${{ secrets.FTP_USER }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        host: ${{ secrets.FTP_HOST }} # Optional, defaults to 21
+        path: dist
+        into: web
+        cleanupExisting: true # Optional, defaults to false
+
+
