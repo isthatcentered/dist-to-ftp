@@ -1,5 +1,5 @@
-name: gatsby-to-ft
-description: Deploy a gatsby site to ftp
+name: dist-to-ft
+description: Deploy your build folder via ftp
 inputs:
   user:
     required: true
@@ -15,8 +15,8 @@ inputs:
     description: FTP host url
     required: true
   path:
-    description: Path to Gatsby's build folder (usually ./public)
-    default: public
+    description: Path to your build folder (usually ./dist or ./public)
+    default: dist
     required: true
   into:
     description: Where to place the files in your ftp

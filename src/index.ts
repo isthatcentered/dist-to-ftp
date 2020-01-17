@@ -1,16 +1,29 @@
 import * as core from "@actions/core"
+import deployToFtp from "@isthatcentered/deploy-to-ftp"
+
+const castBooleanString = (boolean: string) => /true/i.test(boolean)
 
 const run = async () => {
   try {
-    core.info(`Action working`)
-    // `who-to-greet` input defined in action metadata file
-    // const nameToGreet = core.getInput("who-to-greet")
-    // console.log(`Hello ${nameToGreet}!`)
-    // const time = new Date().toTimeString()
-    // core.setOutput("time", time)
-    // // Get the JSON webhook payload for the event that triggered the workflow
-    // const payload = JSON.stringify(github.context.payload, undefined, 2)
-    // console.log(`The event payload: ${payload}`)
+    const config = {
+      user: core.getInput("user", { required: true }),
+      password: core.getInput("password", { required: true }),
+      port: core.getInput("port"),
+      host: core.getInput("host", { required: true }),
+      path: core.getInput("path", { required: true }),
+      into: core.getInput("into", { required: true }),
+      cleanupExisting: castBooleanString(core.getInput("cleanupExisting")),
+    }
+
+    core.info(`Deploying ${config.path} folder`)
+
+    const status = await deployToFtp(config.path)(config)
+
+    if (status.type === "failure") {
+      throw status.error
+    }
+
+    core.info(`Deploy successfull`)
   } catch (error) {
     core.setFailed(error.message)
   }

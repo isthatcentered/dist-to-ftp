@@ -1,6 +1,8 @@
-# Gatsby to FTP GitHub Action
+# Dist to FTP GitHub Action
 
-Deploy your gatsby site via ftp automatically
+Automatically deploy your dist folder via ftp
+
+_(Or whatever your build folder is called)_
 
 ## Inputs
 
@@ -19,19 +21,19 @@ inputs:
   into:
     description: Where to place the files in your ftp
     required: true
+  path:
+    description: Path to your build folder (usually "./public" or "./dist")
+    default: dist
+    required: true
 
   # Optional
   port:
     description: FTP port
     required: false
     default: "21"
-  path:
-    description: Path to Gatsby's build folder (usually "public")
-    default: public
-    required: true
   cleanupExisting:
     required: false
-    default: false
+    default: true
     description: Remove existing file inside FTP destination folder
 ```
 
