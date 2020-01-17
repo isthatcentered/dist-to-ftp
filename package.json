@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-to-ftp",
+  "name": "dist-to-ftp",
   "version": "1.0.0",
   "main": "dist/index.js",
   "dependencies": {},
@@ -34,14 +34,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/isthatcentered/gatsby-to-ftp.git"
+    "url": "git+https://github.com/isthatcentered/dist-to-ftp.git"
   },
-  "keywords": [],
+  "keywords": [
+    "Github Actions",
+    "ftp",
+    "deploy"
+  ],
   "author": "Edouard Penin <e.peninb@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/isthatcentered/gatsby-to-ftp/issues"
+    "url": "https://github.com/isthatcentered/dist-to-ftp/issues"
   },
-  "homepage": "https://github.com/isthatcentered/gatsby-to-ftp#readme",
-  "description": ""
+  "homepage": "https://github.com/isthatcentered/dist-to-ftp#readme",
+  "description": "Automatically deploy your dist folder via ftp _(Or whatever your build folder is called)_"
 }
