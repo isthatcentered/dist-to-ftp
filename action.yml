@@ -1,5 +1,9 @@
 name: dist-to-ft
+author: Edouard Penin
 description: Deploy your build folder via ftp
+branding:
+  color: green
+  icon: upload-cloud
 inputs:
   user:
     required: true
